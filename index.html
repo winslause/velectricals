@@ -1140,24 +1140,27 @@
 
     /* Responsive Styles */
 
-    /* Flex layout for large screens: video and gallery side by side */
-    @media (min-width: 992px) {
-      .gallery-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-      }
+     /* Flex layout for large screens: video and gallery side by side */
+     @media (min-width: 992px) {
+       .gallery-container {
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+         align-items: center;
+         /* Vertically center the video and gallery */
+       }
 
-      /* Video size for large screens */
-      .video-container {
-        flex: 0 0 60%;
-        /* Adjust video width to 60% */
-        max-width: 60%;
-        margin-left: 20px;
-        height: 500px;
-        /* Increased height for the video */
-      }
+       /* Video size for large screens */
+       .video-container {
+         flex: 0 0 60%;
+         /* Adjust video width to 60% */
+         max-width: 60%;
+         margin-left: 20px;
+         height: 300px;
+         /* Reduced height for the video */
+         position: relative;
+         /* For positioning the play button overlay */
+       }
 
       /* Gallery container taking 40% */
       .gallery-content {
@@ -1219,10 +1222,14 @@
     <div class="gallery-container">
       <!-- Video Background Section -->
       <div class="video-container col-md-8">
-        <video autoplay loop muted playsinline class="w-100">
-          <source src="vid.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <iframe 
+          src="https://www.youtube.com/embed/E3uXMiSdxLU?autoplay=1&mute=1&loop=1&playlist=E3uXMiSdxLU&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+          class="w-100 h-100"
+          style="border-radius: 8px; pointer-events: none;">
+        </iframe>
       </div>
 
       <!-- Gallery Content -->
