@@ -3452,6 +3452,91 @@
     </div>
   </footer>
 
+  <!-- Back to Top Arrow Button -->
+<a href="#" id="viobix-back-to-top" class="viobix-back-to-top" style="position: fixed; bottom: 110px; right: 30px; background-color: #16213e; color: #FFD700; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; font-size: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 999; text-decoration: none; transition: all 0.3s ease; opacity: 0; visibility: hidden; cursor: pointer;" title="Back to Top">
+  <i class="fas fa-arrow-up"></i>
+</a>
+
+<style>
+  /* Back to Top Button Styles */
+  .viobix-back-to-top {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+  
+  /* Hover effect */
+  .viobix-back-to-top:hover {
+    background-color: #FFD700 !important;
+    color: #16213e !important;
+    transform: translateY(-5px) scale(1.05) !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25) !important;
+  }
+  
+  /* Active/click effect */
+  .viobix-back-to-top:active {
+    transform: translateY(0px) scale(0.98) !important;
+  }
+  
+  /* Show button when scrolled down */
+  .viobix-back-to-top.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* Responsive adjustment for very small screens */
+  @media (max-width: 576px) {
+    .viobix-back-to-top {
+      width: 45px !important;
+      height: 45px !important;
+      font-size: 20px !important;
+      bottom: 100px !important;
+      right: 20px !important;
+    }
+  }
+  
+  /* Adjust if WhatsApp button is different size */
+  /* This ensures proper spacing above WhatsApp */
+  @media (max-width: 480px) {
+    .viobix-back-to-top {
+      bottom: 90px !important;
+      right: 20px !important;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    // Get the back to top button
+    const backToTopBtn = document.getElementById('viobix-back-to-top');
+    
+    // Function to check scroll position and show/hide button
+    function toggleBackToTopButton() {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    }
+    
+    // Function to scroll smoothly to top
+    function scrollToTop(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+    
+    // Listen for scroll events
+    window.addEventListener('scroll', toggleBackToTopButton);
+    
+    // Listen for click on back to top button
+    backToTopBtn.addEventListener('click', scrollToTop);
+    
+    // Initial check on page load
+    toggleBackToTopButton();
+  })();
+</script>
+
    <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/254769525570" target="_blank" class="whatsapp-float" style="position: fixed; bottom: 30px; right: 30px; background-color: #25D366; color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease;" title="WhatsApp">
     <i class="fab fa-whatsapp"></i>
