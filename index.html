@@ -584,34 +584,305 @@
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #16213e;">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a style="margin: 10px;" class="navbar-brand d-flex align-items-center" href="#">
-        <span class="brand-text" style="color: #FFD700;">Viobix ELECTRICALS</span>
-        <p style="color: #FFA500;"><i>Powering Your World with Excellence</i></p>
-      </a>
-      <a class="nav-link d-lg-none search-icon-mobile" href="#">
-        <i class="fas fa-search"></i>
-      </a>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a style="color: #ffffff !important;" class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a style="color: #ffffff !important;" class="nav-link" href="#about-us">About Us</a></li>
-          <li class="nav-item"><a style="color: #ffffff !important;" class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a style="color: #ffffff !important;" class="nav-link" href="#process">Our Process</a></li>
-          <li class="nav-item"><a style="color: #ffffff !important;" class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a style="color: #ffffff !important;" class="nav-link" href="#contact-us">Contact Us</a></li>
-          <li class="nav-item search-icon d-none d-lg-block">
-            <a class="nav-link" href="#">
-              <i class="fas fa-search" style="color: #36abdd !important;"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a style="margin: 10px;" class="navbar-brand d-flex align-items-center" href="#">
+      <span class="brand-text" style="color: #FFD700;">Viobix ELECTRICALS</span>
+      <p style="color: #FFA500;"><i>Powering Your World with Excellence</i></p>
+    </a>
+    <a class="nav-link d-lg-none search-icon-mobile" href="#">
+      <i class="fas fa-search"></i>
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <!-- Home with Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #ffffff !important; transition: all 0.3s ease;">
+            Home
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="homeDropdown" style="background-color: #16213e; border: 1px solid rgba(255,215,0,0.3); border-radius: 12px; margin-top: 10px; padding: 8px 0; min-width: 220px; animation: fadeInDown 0.3s ease;">
+            <li><a class="dropdown-item" href="#home-main" style="color: #ffffff; padding: 10px 20px; transition: all 0.3s ease;"><i class="fas fa-home" style="color: #FFD700; width: 25px;"></i> Home Main</a></li>
+            <li><a class="dropdown-item" href="#service-footprint" style="color: #ffffff; padding: 10px 20px; transition: all 0.3s ease;"><i class="fas fa-map-marker-alt" style="color: #FFD700; width: 25px;"></i> Service Footprint</a></li>
+            <li><a class="dropdown-item" href="#client-success-stories" style="color: #ffffff; padding: 10px 20px; transition: all 0.3s ease;"><i class="fas fa-star" style="color: #FFD700; width: 25px;"></i> Success Stories</a></li>
+            <li><a class="dropdown-item" href="#meet-master-electrician" style="color: #ffffff; padding: 10px 20px; transition: all 0.3s ease;"><i class="fas fa-user-tie" style="color: #FFD700; width: 25px;"></i> Meet Our Expert</a></li>
+            <li><a class="dropdown-item" href="#viobix-faq-section" style="color: #ffffff; padding: 10px 20px; transition: all 0.3s ease;"><i class="fas fa-question-circle" style="color: #FFD700; width: 25px;"></i> FAQ</a></li>
+          </ul>
+        </li>
+        
+        <!-- About Us -->
+        <li class="nav-item"><a style="color: #ffffff !important;" class="nav-link" href="#about-us">About Us</a></li>
+        
+        <!-- Services -->
+        <li class="nav-item"><a style="color: #ffffff !important;" class="nav-link" href="#services">Services</a></li>
+        
+        <!-- Our Process -->
+        <li class="nav-item"><a style="color: #ffffff !important;" class="nav-link" href="#process">Our Process</a></li>
+        
+        <!-- Projects -->
+        <li class="nav-item"><a style="color: #ffffff !important;" class="nav-link" href="#projects">Projects</a></li>
+        
+        <!-- Contact Us -->
+        <li class="nav-item"><a style="color: #ffffff !important;" class="nav-link" href="#contact-us">Contact Us</a></li>
+        
+        <!-- Search Icon -->
+        <li class="nav-item search-icon d-none d-lg-block">
+          <a class="nav-link" href="#">
+            <i class="fas fa-search" style="color: #FFD700 !important;"></i>
+          </a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
+
+<!-- CSS for Dropdown Animation -->
+<style>
+  /* Dropdown fade-in animation */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Dropdown item hover effect */
+  .dropdown-item {
+    transition: all 0.3s ease !important;
+    font-size: 0.95rem;
+  }
+  
+  .dropdown-item:hover {
+    background-color: rgba(255, 215, 0, 0.15) !important;
+    padding-left: 28px !important;
+    color: #FFD700 !important;
+  }
+  
+  /* Dropdown menu styling */
+  .dropdown-menu {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Dropdown toggle hover effect */
+  .dropdown-toggle:hover {
+    color: #FFD700 !important;
+  }
+  
+  /* Active dropdown item styling */
+  .dropdown-item:active {
+    background-color: rgba(255, 215, 0, 0.25) !important;
+    color: #FFD700 !important;
+  }
+  
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Navbar link hover effects (except dropdown toggle) */
+  .navbar-nav .nav-link:not(.dropdown-toggle):hover {
+    color: #FFD700 !important;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+  
+  /* Dropdown toggle when open */
+  .dropdown.show .dropdown-toggle {
+    color: #FFD700 !important;
+  }
+  
+  /* Search icon hover */
+  .search-icon .nav-link:hover i {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Brand text hover */
+  .navbar-brand:hover {
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+  }
+</style>
+
+<!-- JavaScript to handle dropdown and section IDs -->
+<script>
+  (function() {
+    // Ensure all sections have proper IDs for navigation
+    function ensureSectionIds() {
+      // Home section (slideshow)
+      const homeSection = document.querySelector('#slideshow');
+      if (homeSection) {
+        homeSection.id = 'home-main';
+      }
+      
+      // Service Footprint section
+      const footprintSection = document.querySelector('#service-footprint');
+      if (footprintSection && footprintSection.id !== 'service-footprint') {
+        footprintSection.id = 'service-footprint';
+      }
+      
+      // Client Success Stories section
+      const successSection = document.querySelector('#client-success-stories');
+      if (successSection && successSection.id !== 'client-success-stories') {
+        successSection.id = 'client-success-stories';
+      }
+      
+      // Meet Master Electrician section
+      const masterSection = document.querySelector('#meet-master-electrician');
+      if (masterSection && masterSection.id !== 'meet-master-electrician') {
+        masterSection.id = 'meet-master-electrician';
+      }
+      
+      // FAQ section
+      const faqSection = document.querySelector('#viobix-faq-section');
+      if (faqSection && faqSection.id !== 'viobix-faq-section') {
+        faqSection.id = 'viobix-faq-section';
+      }
+    }
+    
+    // Close dropdown when clicking a link (mobile optimization)
+    function setupDropdownClose() {
+      const dropdownLinks = document.querySelectorAll('.dropdown-menu .dropdown-item');
+      const dropdownToggle = document.querySelector('#homeDropdown');
+      
+      dropdownLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          // Close the dropdown menu
+          if (dropdownToggle) {
+            const bsDropdown = bootstrap.Dropdown.getInstance(dropdownToggle);
+            if (bsDropdown) {
+              bsDropdown.hide();
+            }
+          }
+        });
+      });
+    }
+    
+    // Active link highlighting based on scroll position
+    function setupActiveLinkHighlighting() {
+      const sections = [
+        { id: 'home-main', selector: 'a[href="#home-main"]', isDropdown: true },
+        { id: 'service-footprint', selector: 'a[href="#service-footprint"]', isDropdown: true },
+        { id: 'client-success-stories', selector: 'a[href="#client-success-stories"]', isDropdown: true },
+        { id: 'meet-master-electrician', selector: 'a[href="#meet-master-electrician"]', isDropdown: true },
+        { id: 'viobix-faq-section', selector: 'a[href="#viobix-faq-section"]', isDropdown: true },
+        { id: 'about-us', selector: 'a[href="#about-us"]', isDropdown: false },
+        { id: 'services', selector: 'a[href="#services"]', isDropdown: false },
+        { id: 'process', selector: 'a[href="#process"]', isDropdown: false },
+        { id: 'projects', selector: 'a[href="#projects"]', isDropdown: false },
+        { id: 'contact-us', selector: 'a[href="#contact-us"]', isDropdown: false }
+      ];
+      
+      function highlightActiveNav() {
+        let currentSection = '';
+        const scrollPosition = window.scrollY + 200; // Offset for navbar
+        
+        sections.forEach(section => {
+          const element = document.getElementById(section.id);
+          if (element) {
+            const offsetTop = element.offsetTop;
+            const offsetBottom = offsetTop + element.offsetHeight;
+            
+            if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+              currentSection = section.id;
+            }
+          }
+        });
+        
+        // Reset all nav links to default white
+        document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => {
+          if (link.classList && link.classList.contains('dropdown-item')) {
+            link.style.color = '#ffffff';
+            link.style.fontWeight = 'normal';
+          } else if (link.tagName === 'A' && !link.classList.contains('dropdown-toggle')) {
+            link.style.color = '#ffffff !important';
+            link.style.fontWeight = 'normal';
+          }
+        });
+        
+        // Reset dropdown toggle
+        const dropdownToggle = document.querySelector('#homeDropdown');
+        if (dropdownToggle) {
+          dropdownToggle.style.color = '#ffffff !important';
+          dropdownToggle.style.fontWeight = 'normal';
+        }
+        
+        // Highlight current section
+        if (currentSection) {
+          if (currentSection === 'home-main' || currentSection === 'service-footprint' || 
+              currentSection === 'client-success-stories' || currentSection === 'meet-master-electrician' || 
+              currentSection === 'viobix-faq-section') {
+            // Highlight the dropdown toggle
+            if (dropdownToggle) {
+              dropdownToggle.style.color = '#FFD700 !important';
+              dropdownToggle.style.fontWeight = 'bold';
+            }
+            // Also highlight the specific dropdown item
+            const activeDropdownItem = document.querySelector(`.dropdown-item[href="#${currentSection}"]`);
+            if (activeDropdownItem) {
+              activeDropdownItem.style.color = '#FFD700';
+              activeDropdownItem.style.fontWeight = 'bold';
+              activeDropdownItem.style.backgroundColor = 'rgba(255, 215, 0, 0.1)';
+            }
+          } else {
+            // Highlight regular nav link
+            const activeLink = document.querySelector(`a[href="#${currentSection}"]`);
+            if (activeLink && !activeLink.classList.contains('dropdown-toggle')) {
+              activeLink.style.color = '#FFD700 !important';
+              activeLink.style.fontWeight = 'bold';
+            }
+          }
+        }
+      }
+      
+      window.addEventListener('scroll', highlightActiveNav);
+      highlightActiveNav(); // Initial call
+    }
+    
+    // Smooth scroll for anchor links
+    function setupSmoothScroll() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#' || targetId === '') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            
+            // Update URL without jumping
+            history.pushState(null, null, targetId);
+          }
+        });
+      });
+    }
+    
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        ensureSectionIds();
+        setupDropdownClose();
+        setupActiveLinkHighlighting();
+        setupSmoothScroll();
+      });
+    } else {
+      ensureSectionIds();
+      setupDropdownClose();
+      setupActiveLinkHighlighting();
+      setupSmoothScroll();
+    }
+  })();
+</script>
 
 
   <!-- slideshow -->
