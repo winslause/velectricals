@@ -544,8 +544,8 @@
       <div class="row align-items-center">
         <div class="col-lg-8">
           <div class="d-flex flex-column flex-lg-row gap-2 gap-lg-4 justify-content-center justify-content-lg-start text-center text-lg-start">
-             <a href="tel:+254769525570" class="text-light text-decoration-none">
-               <i class="fas fa-phone-alt me-2"></i>+254 769 525 570
+             <a href="tel:+254726447763" class="text-light text-decoration-none">
+               <i class="fas fa-phone-alt me-2"></i>0726447763
              </a>
              
              <a href="mailto:wenbusale383@gmail.com" class="text-light text-decoration-none">
@@ -1012,7 +1012,7 @@
 
         <!-- Image Section -->
         <div class="image-container col-lg-5 text-center text-lg-end">
-          <img src="img1.png" alt="Viobix Electricals - Professional Electricians" class="img-fluid">
+          <img src="interior lighting.jpeg" alt="Viobix Electricals - Professional Electricians" class="img-fluid">
         </div>
     </div>
   </section>
@@ -1091,7 +1091,7 @@
  <!-- Card 1: Residential Wiring -->
         <div class="col-lg-4 col-md-6 col-12 mb-4">
           <div class="card h-100" style="cursor: pointer; transition: transform 0.3s ease;">
-            <img src="img1.png" height="200px" class="card-img-top" alt="Residential Electrical">
+            <img src="light1.jpeg" height="200px" class="card-img-top" alt="Residential Electrical">
             <div class="card-body">
               <h5 class="card-title" style="color: #FFD700;">Residential Services</h5>
               <p class="card-text">
@@ -1106,7 +1106,7 @@
         <!-- Card 2: Commercial Electrical -->
         <div class="col-lg-4 col-md-6 col-12 mb-4">
           <div class="card h-100" style="cursor: pointer; transition: transform 0.3s ease;">
-            <img src="img2.png" height="200px" class="card-img-top" alt="Commercial Electrical">
+            <img src="elec5.jpeg" height="200px" class="card-img-top" alt="Commercial Electrical">
             <div class="card-body">
               <h5 class="card-title" style="color: #FFD700;">Commercial Services</h5>
               <p class="card-text">
@@ -1121,7 +1121,7 @@
         <!-- Card 3: Industrial Electrical -->
         <div class="col-lg-4 col-md-6 col-12 mb-4">
           <div class="card h-100" style="cursor: pointer; transition: transform 0.3s ease;">
-            <img src="img3.png" height="200px" class="card-img-top" alt="Industrial Electrical">
+            <img src="elect1.jpeg" height="200px" class="card-img-top" alt="Industrial Electrical">
             <div class="card-body">
               <h5 class="card-title" style="color: #FFD700;">Industrial Services</h5>
               <p class="card-text">
@@ -1151,7 +1151,7 @@
         <!-- Card 5: Security Systems -->
         <div class="col-lg-4 col-md-6 col-12 mb-4">
           <div class="card h-100" style="cursor: pointer; transition: transform 0.3s ease;">
-            <img src="img5.png" height="200px" class="card-img-top" alt="Security Systems">
+            <img src="lights.jpeg" height="200px" class="card-img-top" alt="Security Systems">
             <div class="card-body">
               <h5 class="card-title" style="color: #FFD700;">Security & Smart Systems</h5>
               <p class="card-text">
@@ -1599,50 +1599,99 @@
         {
           src: 'img4.png',
           alt: 'Image 4'
-        }
-      ],
-      [{
+        },
+        {
           src: 'img5.png',
           alt: 'Image 5'
         },
         {
           src: 'img6.png',
           alt: 'Image 6'
-        },
-        {
+        }
+      ],
+      [{
           src: 'img7.png',
           alt: 'Image 7'
         },
         {
           src: 'img8.png',
           alt: 'Image 8'
+        },
+        {
+          src: 'img9.png',
+          alt: 'Image 9'
+        },
+        {
+          src: 'img10.png',
+          alt: 'Image 10'
+        },
+        {
+          src: 'home1.jpeg',
+          alt: 'Home 1'
+        },
+        {
+          src: 'weld1.jpeg',
+          alt: 'Weld 1'
         }
       ],
       [{
-          src: 'img5.png',
-          alt: 'Image 5'
+          src: 'vin.jpeg',
+          alt: 'Vin'
         },
         {
-          src: 'img2.png',
-          alt: 'Image 6'
+          src: 'light2.jpeg',
+          alt: 'Light 2'
         },
         {
-          src: 'img7.png',
-          alt: 'Image 7'
+          src: 'light1.jpeg',
+          alt: 'Light 1'
         },
         {
-          src: 'img4.png',
-          alt: 'Image 8'
+          src: 'elec6.jpeg',
+          alt: 'Elec 6'
+        },
+        {
+          src: 'elec5.jpeg',
+          alt: 'Elec 5'
+        },
+        {
+          src: 'elec4.jpeg',
+          alt: 'Elec 4'
+        }
+      ],
+      [{
+          src: 'elec3.jpeg',
+          alt: 'Elec 3'
+        },
+        {
+          src: 'elect2.jpeg',
+          alt: 'Elect 2'
+        },
+        {
+          src: 'elect1.jpeg',
+          alt: 'Elect 1'
+        },
+        {
+          src: 'interior lighting.jpeg',
+          alt: 'Interior Lighting'
+        },
+        {
+          src: 'lights.jpeg',
+          alt: 'Lights'
         }
       ]
     ];
 
-    let currentSetIndex = 0;
+    let currentIndex = 0;
+    const imagesPerPage = 4;
 
-    function loadImages(setIndex) {
+    const allImages = imageSets.flat();
+
+    function loadImages() {
       const galleryContainer = document.getElementById('image-container');
       galleryContainer.innerHTML = ''; // Clear current images
-      imageSets[setIndex].forEach(image => {
+      const pageImages = allImages.slice(currentIndex, currentIndex + imagesPerPage);
+      pageImages.forEach(image => {
         const thumbnail = document.createElement('div');
         thumbnail.classList.add('gallery-thumbnail');
         thumbnail.innerHTML = `
@@ -1659,10 +1708,13 @@
           expandedView.style.display = 'flex';
         });
       });
+
+      document.getElementById('backBtn').style.display = currentIndex === 0 ? 'none' : 'block';
+      document.getElementById('nextBtn').style.display = currentIndex + imagesPerPage >= allImages.length ? 'none' : 'block';
     }
 
-    // Initially load the first set of images
-    loadImages(0);
+    // Initially load the first page
+    loadImages();
 
     // Expand Image Functionality
     document.querySelector('.close-expanded').addEventListener('click', function() {
@@ -1671,29 +1723,17 @@
 
     // Next Button Functionality
     document.getElementById('nextBtn').addEventListener('click', function() {
-      if (currentSetIndex < imageSets.length - 1) {
-        currentSetIndex++;
-        loadImages(currentSetIndex);
-        document.getElementById('backBtn').style.display = 'block';
-      }
-
-      // Hide next button when at the last set
-      if (currentSetIndex === imageSets.length - 1) {
-        this.style.display = 'none';
+      if (currentIndex + imagesPerPage < allImages.length) {
+        currentIndex += imagesPerPage;
+        loadImages();
       }
     });
 
     // Back Button Functionality
     document.getElementById('backBtn').addEventListener('click', function() {
-      if (currentSetIndex > 0) {
-        currentSetIndex--;
-        loadImages(currentSetIndex);
-        document.getElementById('nextBtn').style.display = 'block';
-      }
-
-      // Hide back button when at the first set
-      if (currentSetIndex === 0) {
-        this.style.display = 'none';
+      if (currentIndex > 0) {
+        currentIndex -= imagesPerPage;
+        loadImages();
       }
     });
   </script>
@@ -1708,8 +1748,8 @@
           <h2 class="font-weight-bold" style="font-size: 2.5rem; color:#FFD700;">Need Electrical Services?</h2>
           <p class="lead" style="font-size: 1.8rem; color:#FFD700;"><b>Get a Free Quote Today!</b></p>
           <div class="mt-5">
-            <p class="text-light mb-3" style="font-size: 1.2rem;"><i class="fas fa-phone-alt me-3"></i> <strong>Call:</strong> +254 769 525 570</p>
-            <p class="text-light mb-3" style="font-size: 1.2rem;"><i class="fab fa-whatsapp me-3"></i> <strong>WhatsApp:</strong> +254 769 525 570</p>
+            <p class="text-light mb-3" style="font-size: 1.2rem;"><i class="fas fa-phone-alt me-3"></i> <strong>Call:</strong> 0726447763/0723214244/0103410044</p>
+            <p class="text-light mb-3" style="font-size: 1.2rem;"><i class="fab fa-whatsapp me-3"></i> <strong>WhatsApp:</strong> 0726447763/0723214244/0103410044</p>
             <p class="text-light mb-3" style="font-size: 1.2rem;"><i class="fas fa-envelope me-3"></i> <strong>Email:</strong> wenbusale383@gmail.com</p>
           </div>
           <p class="text-light mt-4" style="font-size: 1.1rem;">
@@ -1867,7 +1907,7 @@
 
           <!-- CTA Button -->
           <div style="margin-top: 25px;">
-            <a href="https://wa.me/254769525570" style="display: block; text-align: center; background-color: #FFD700; color: #16213e; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold; transition: all 0.3s ease; font-size: 1rem;" 
+            <a href="https://wa.me/254726447763" style="display: block; text-align: center; background-color: #FFD700; color: #16213e; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold; transition: all 0.3s ease; font-size: 1rem;" 
                onmouseover="this.style.backgroundColor='#FFA500'; this.style.transform='translateY(-2px)'" 
                onmouseout="this.style.backgroundColor='#FFD700'; this.style.transform='translateY(0)'">
               <i class="fas fa-bolt"></i> Get a Free Quote
@@ -1984,7 +2024,7 @@
         <div style="font-family: Arial, sans-serif; min-width: 150px;">
           <strong style="color: #FFD700;">Viobix Electricals HQ</strong><br>
           <i class="fas fa-map-marker-alt"></i> Nairobi, Kenya<br>
-          <i class="fas fa-phone"></i> +254 769 525 570<br>
+          <i class="fas fa-phone"></i> 0726447763/0723214244/0103410044<br>
           <i class="fas fa-clock"></i> 24/7 Emergency Service
         </div>
       `).openPopup();
@@ -2084,7 +2124,7 @@
               
               <!-- Image Column -->
               <div style="flex: 1; min-width: 280px; position: relative; overflow: hidden;">
-                <img src="https://www.formathomes.com.au/wp-content/uploads/2025/02/top-tips-1-1.png.webp" 
+                <img src="home1.jpeg" 
                      alt="Samuel Otieno - Happy homeowner in Kilimani" 
                      style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3;">
                 <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(22,33,62,0.9); padding: 8px 16px; border-radius: 30px;">
@@ -2237,7 +2277,7 @@
             <div style="display: flex; flex-wrap: wrap; background: white; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); margin: 10px;">
               
               <div style="flex: 1; min-width: 280px; position: relative; overflow: hidden;">
-                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&h=500&fit=crop" 
+                <img src="weld1.jpeg" 
                      alt="John Mwangi - Industrial workshop owner in Industrial Area" 
                      style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3;">
                 <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(22,33,62,0.9); padding: 8px 16px; border-radius: 30px;">
@@ -2309,7 +2349,7 @@
             <div style="display: flex; flex-wrap: wrap; background: white; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); margin: 10px;">
               
               <div style="flex: 1; min-width: 280px; position: relative; overflow: hidden;">
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=500&fit=crop" 
+                <img src="light2.jpeg" 
                      alt="James & Mary Wanjiku - Smart home in Karen" 
                      style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3;">
                 <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(22,33,62,0.9); padding: 8px 16px; border-radius: 30px;">
@@ -2399,7 +2439,7 @@
     <!-- Bottom CTA -->
     <div style="text-align: center; margin-top: 50px;">
       <p style="color: #666; margin-bottom: 20px;">Want to be our next success story?</p>
-      <a href="wa.me/254769525570" style="display: inline-block; background: linear-gradient(135deg, #FFD700, #FFA500); color: #16213e; text-decoration: none; padding: 14px 32px; border-radius: 50px; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255,215,0,0.3);">
+      <a href="wa.me/254726447763" style="display: inline-block; background: linear-gradient(135deg, #FFD700, #FFA500); color: #16213e; text-decoration: none; padding: 14px 32px; border-radius: 50px; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255,215,0,0.3);">
         <i class="fas fa-calendar-check"></i> Request Your Free Consultation
       </a>
     </div>
@@ -2655,7 +2695,7 @@
         
         <!-- Main Image Container -->
         <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.3); transition: transform 0.5s ease;">
-          <img src="https://st2.depositphotos.com/1010613/11931/i/450/depositphotos_119312700-stock-photo-electrician-examining-fusebox-with-screwdriver.jpg" 
+          <img src="vin.jpeg" 
                alt="Master Electrician Vincent  vincent - KPLC Certified Professional" 
                style="width: 100%; height: auto; aspect-ratio: 3/4; object-fit: cover; display: block;">
           
@@ -2678,10 +2718,10 @@
         <!-- Floating Social/Contact Badge -->
         <div style="position: absolute; bottom: 20px; right: -10px; background: #16213e; border-radius: 50px; padding: 10px 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border: 1px solid rgba(255,215,0,0.3); animation: viobix-float 3s ease-in-out infinite;">
           <div style="display: flex; align-items: center; gap: 12px;">
-            <a href="tel:+254769525570" style="color: #FFD700; text-decoration: none; transition: transform 0.3s;">
+            <a href="tel:+254726447763" style="color: #FFD700; text-decoration: none; transition: transform 0.3s;">
               <i class="fas fa-phone-alt"></i>
             </a>
-            <a href="https://wa.me/254769525570" target="_blank" style="color: #25D366; text-decoration: none; transition: transform 0.3s;">
+            <a href="https://wa.me/254726447763" target="_blank" style="color: #25D366; text-decoration: none; transition: transform 0.3s;">
               <i class="fab fa-whatsapp"></i>
             </a>
             <a href="mailto:wenbusale383@gmail.com" style="color: #FFD700; text-decoration: none; transition: transform 0.3s;">
@@ -2705,7 +2745,7 @@
         
         <!-- Bio -->
         <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 25px; font-size: 1rem;">
-          David brings over 15 years of specialized electrical expertise, including 8 years working directly with Kenya Power & Lighting Company (KPLC) on high-voltage distribution networks. His deep understanding of Kenya's power infrastructure makes him uniquely qualified to handle complex electrical challenges, from residential installations to industrial power systems.
+          Vincent brings over 15 years of specialized electrical expertise, including 8 years working directly with Kenya Power & Lighting Company (KPLC) on high-voltage distribution networks. His deep understanding of Kenya's power infrastructure makes him uniquely qualified to handle complex electrical challenges, from residential installations to industrial power systems.
         </p>
         
         <!-- KPLC Affiliations & Credentials -->
@@ -3079,7 +3119,7 @@
               </p>
               <div style="display: flex; align-items: center; gap: 8px; margin-top: 10px;">
                 <i class="fas fa-phone-alt" style="color: #22c55e; font-size: 0.8rem;"></i>
-                <span style="color: #64748b; font-size: 0.8rem;">Direct line to our warranty department +254 769 525 570</span>
+                <span style="color: #64748b; font-size: 0.8rem;">Direct line to our warranty department 0726447763/0723214244/0103410044</span>
               </div>
             </div>
           </div>
@@ -3146,7 +3186,7 @@
               </p>
               <div style="display: flex; align-items: center; gap: 8px; margin-top: 10px;">
                 <i class="fas fa-truck" style="color: #FFD700; font-size: 0.8rem;"></i>
-                <span style="color: #64748b; font-size: 0.8rem;">24/7 emergency dispatch: +254 769 525 570</span>
+                <span style="color: #64748b; font-size: 0.8rem;">24/7 emergency dispatch: 0726447763/0723214244/0103410044</span>
               </div>
             </div>
           </div>
@@ -3230,10 +3270,10 @@
           </p>
         </div>
         <div style="flex: 1; min-width: 240px;">
-          <a href="tel:+254769525570" style="display: inline-flex; align-items: center; gap: 10px; background: #FFD700; color: #16213e; text-decoration: none; padding: 12px 25px; border-radius: 50px; font-weight: bold; transition: all 0.3s ease; margin-right: 10px;">
+          <a href="tel:+254726447763" style="display: inline-flex; align-items: center; gap: 10px; background: #FFD700; color: #16213e; text-decoration: none; padding: 12px 25px; border-radius: 50px; font-weight: bold; transition: all 0.3s ease; margin-right: 10px;">
             <i class="fas fa-phone-alt"></i> Call Us
           </a>
-          <a href="https://wa.me/254769525570" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: white; text-decoration: none; padding: 12px 25px; border-radius: 50px; font-weight: bold; transition: all 0.3s ease;">
+          <a href="https://wa.me/254726447763" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: white; text-decoration: none; padding: 12px 25px; border-radius: 50px; font-weight: bold; transition: all 0.3s ease;">
             <i class="fab fa-whatsapp"></i> WhatsApp
           </a>
         </div>
@@ -3429,8 +3469,8 @@
              <h5 class="text" style="color: #FFD700; ">Contact Us</h5>
              <ul class="list-unstyled text-light">
                <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
-               <li><i class="fas fa-phone"></i> <a href="tel:+254769525570" class="text-light">+254 769 525 570</a></li>
-               <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/254769525570" target="_blank" class="text-light">WhatsApp: +254 769 525 570</a></li>
+               <li><i class="fas fa-phone"></i> <a href="tel:+254726447763" class="text-light">0726447763/0723214244/0103410044</a></li>
+               <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/254726447763" target="_blank" class="text-light">WhatsApp: 0726447763/0723214244/0103410044</a></li>
                <li><i class="fas fa-envelope"></i> <a href="mailto:wenbusale383@gmail.com" class="text-light">wenbusale383@gmail.com</a></li>
                <li><i class="fas fa-clock"></i> Mon - Sat: 8:00 AM - 8:00 PM</li>
              </ul>
@@ -3443,7 +3483,7 @@
               <li><a href="#services" class="text-light">Our Services</a></li>
               <li><a href="#projects" class="text-light">Projects</a></li>
               <li><a href="#process" class="text-light">Our Process</a></li>
-              <li><a href="https://wa.me/254769525570" class="text-light">Get a Quote</a></li>
+              <li><a href="https://wa.me/254726447763" class="text-light">Get a Quote</a></li>
             </ul>
             <!-- <a href="brochure.pdf" download="brochure.pdf" class="btn btn-warning mt-2" style="background-color: #FFD700; color: #16213e;">Download Brochure</a> -->
           </div>
@@ -3538,7 +3578,7 @@
 </script>
 
    <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/254769525570" target="_blank" class="whatsapp-float" style="position: fixed; bottom: 30px; right: 30px; background-color: #25D366; color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease;" title="WhatsApp">
+  <a href="https://wa.me/254726447763" target="_blank" class="whatsapp-float" style="position: fixed; bottom: 30px; right: 30px; background-color: #25D366; color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease;" title="WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
@@ -3567,7 +3607,7 @@
         </div>
         <div class="modal-footer" style="border-top: none;">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a href="https://wa.me/254769525570" target="_blank" class="btn" style="background-color: #25D366; color: white;">
+          <a href="https://wa.me/254726447763" target="_blank" class="btn" style="background-color: #25D366; color: white;">
             <i class="fab fa-whatsapp me-2"></i>Request Quote
           </a>
         </div>
@@ -3596,12 +3636,12 @@
             <li><strong>Circuit Breaker Failures:</strong> Quick identification and resolution of breaker issues</li>
           </ul>
           <div class="alert alert-danger" style="background-color: #f8d7da; border-color: #f5c6cb;">
-            <strong>⚠️ Safety First:</strong> If you smell burning, see sparks, or experience electrical shocks, evacuate and call us immediately at <strong>+254 769 525 570</strong>
+            <strong>⚠️ Safety First:</strong> If you smell burning, see sparks, or experience electrical shocks, evacuate and call us immediately at <strong>0726447763/0723214244/0103410044</strong>
           </div>
         </div>
         <div class="modal-footer" style="border-top: none;">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a href="tel:+254769525570" class="btn btn-danger">
+          <a href="tel:+254726447763" class="btn btn-danger">
             <i class="fas fa-phone-alt me-2"></i>Call Emergency Line
           </a>
         </div>
@@ -3685,7 +3725,7 @@
         </div>
         <div class="modal-footer" style="border-top: none;">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a href="https://wa.me/254769525570" target="_blank" class="btn" style="background-color: #25D366; color: white;">
+          <a href="https://wa.me/254726447763" target="_blank" class="btn" style="background-color: #25D366; color: white;">
             <i class="fab fa-whatsapp me-2"></i>Get a Free Quote
           </a>
         </div>
@@ -3721,7 +3761,7 @@
         </div>
         <div class="modal-footer" style="border-top: none;">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a href="https://wa.me/254769525570" target="_blank" class="btn" style="background-color: #25D366; color: white;">
+          <a href="https://wa.me/254726447763" target="_blank" class="btn" style="background-color: #25D366; color: white;">
             <i class="fab fa-whatsapp me-2"></i>Get a Free Quote
           </a>
         </div>
@@ -3758,7 +3798,7 @@
         </div>
         <div class="modal-footer" style="border-top: none;">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a href="https://wa.me/254769525570" target="_blank" class="btn" style="background-color: #25D366; color: white;">
+          <a href="https://wa.me/254726447763" target="_blank" class="btn" style="background-color: #25D366; color: white;">
             <i class="fab fa-whatsapp me-2"></i>Get a Free Quote
           </a>
         </div>
@@ -3794,7 +3834,7 @@
         </div>
         <div class="modal-footer" style="border-top: none;">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a href="https://wa.me/254769525570" target="_blank" class="btn" style="background-color: #25D366; color: white;">
+          <a href="https://wa.me/254726447763" target="_blank" class="btn" style="background-color: #25D366; color: white;">
             <i class="fab fa-whatsapp me-2"></i>Get a Free Quote
           </a>
         </div>
@@ -3831,7 +3871,7 @@
         </div>
         <div class="modal-footer" style="border-top: none;">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a href="https://wa.me/254769525570" target="_blank" class="btn" style="background-color: #25D366; color: white;">
+          <a href="https://wa.me/254726447763" target="_blank" class="btn" style="background-color: #25D366; color: white;">
             <i class="fab fa-whatsapp me-2"></i>Get a Free Quote
           </a>
         </div>
@@ -3868,7 +3908,7 @@
         </div>
         <div class="modal-footer" style="border-top: none;">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a href="https://wa.me/254769525570" target="_blank" class="btn" style="background-color: #25D366; color: white;">
+          <a href="https://wa.me/254726447763" target="_blank" class="btn" style="background-color: #25D366; color: white;">
             <i class="fab fa-whatsapp me-2"></i>Get a Free Quote
           </a>
         </div>
@@ -3907,7 +3947,7 @@
         </div>
         <div class="modal-footer" style="border-top: none;">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a href="https://wa.me/254769525570" target="_blank" class="btn" style="background-color: #25D366; color: white;">
+          <a href="https://wa.me/254726447763" target="_blank" class="btn" style="background-color: #25D366; color: white;">
             <i class="fab fa-whatsapp me-2"></i>Schedule Assessment
           </a>
         </div>
@@ -3944,7 +3984,7 @@
         </div>
         <div class="modal-footer" style="border-top: none;">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a href="https://wa.me/254769525570" target="_blank" class="btn" style="background-color: #25D366; color: white;">
+          <a href="https://wa.me/254726447763" target="_blank" class="btn" style="background-color: #25D366; color: white;">
             <i class="fab fa-whatsapp me-2"></i>Request Design Consultation
           </a>
         </div>
@@ -3981,7 +4021,7 @@
         </div>
         <div class="modal-footer" style="border-top: none;">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a href="https://wa.me/254769525570" target="_blank" class="btn" style="background-color: #25D366; color: white;">
+          <a href="https://wa.me/254726447763" target="_blank" class="btn" style="background-color: #25D366; color: white;">
             <i class="fab fa-whatsapp me-2"></i>Learn More
           </a>
         </div>
@@ -4018,7 +4058,7 @@
         </div>
         <div class="modal-footer" style="border-top: none;">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a href="https://wa.me/254769525570" target="_blank" class="btn" style="background-color: #25D366; color: white;">
+          <a href="https://wa.me/254726447763" target="_blank" class="btn" style="background-color: #25D366; color: white;">
             <i class="fab fa-whatsapp me-2"></i>View Portfolio
           </a>
         </div>
@@ -4055,7 +4095,7 @@
         </div>
         <div class="modal-footer" style="border-top: none;">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a href="https://wa.me/254769525570" target="_blank" class="btn" style="background-color: #25D366; color: white;">
+          <a href="https://wa.me/254726447763" target="_blank" class="btn" style="background-color: #25D366; color: white;">
             <i class="fab fa-whatsapp me-2"></i>Learn More
           </a>
         </div>
@@ -4092,7 +4132,7 @@
         </div>
         <div class="modal-footer" style="border-top: none;">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a href="https://wa.me/254769525570" target="_blank" class="btn" style="background-color: #25D366; color: white;">
+          <a href="https://wa.me/254726447763" target="_blank" class="btn" style="background-color: #25D366; color: white;">
             <i class="fab fa-whatsapp me-2"></i>Request Documentation
           </a>
         </div>
